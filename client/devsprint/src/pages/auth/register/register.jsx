@@ -3,6 +3,13 @@ import google from "/google.svg";
 import "./register.css";
 
 const Register = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    console.log(data);
+  };
+
   return (
     <section className="register-container">
       <div className="form-container">
@@ -20,11 +27,12 @@ const Register = () => {
           <hr />
         </div>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="fields">
             <div className="field">
-              <label for="name">Name</label>
+              <label htmlFor="name">Name</label>
               <input
+                required
                 type="text"
                 name="name"
                 id="name"
@@ -32,8 +40,9 @@ const Register = () => {
               />
             </div>
             <div className="field">
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
               <input
+                required
                 type="email"
                 name="email"
                 id="email"
@@ -41,8 +50,9 @@ const Register = () => {
               />
             </div>
             <div className="field">
-              <label for="password">Password</label>
+              <label htmlFor="password">Password</label>
               <input
+                required
                 type="password"
                 name="password"
                 id="password"
@@ -50,8 +60,9 @@ const Register = () => {
               />
             </div>
             <div className="field">
-              <label for="confirm-password">Confirm Password</label>
+              <label htmlFor="confirm-password">Confirm Password</label>
               <input
+                required
                 type="password"
                 name="confirm-password"
                 id="confirm-password"
