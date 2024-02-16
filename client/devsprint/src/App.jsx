@@ -7,6 +7,7 @@ import Navbar from "./components/nav/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/home/Home";
 import Register from "./pages/auth/register/register";
+import Login from "./pages/auth/login/login";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
 

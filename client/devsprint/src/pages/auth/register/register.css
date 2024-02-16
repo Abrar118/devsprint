@@ -54,33 +54,6 @@
    align-items: center;
    justify-content: center;
 }
-
-.form-container .signup-title button:hover {
-   background-color: var(--blue-dark);
-   color: #fff;
-}
-
-.form-container .signup-title button:active {
-   transform: scale(0.95);
-}
-
-.form-container .signup-title button svg {
-   width: 1.2em;
-   height: 1.2em;
-   margin-right: 0.5em;
-}
-
-.form-container .signup-title button span {
-   font-size: 1em;
-   font-weight: 600;
-}
-
-.form-container .signup-title button img {
-   width: 1.2em;
-   height: 1.2em;
-
-}
-
 .form-container .partition {
    display: flex;
    align-items: center;
