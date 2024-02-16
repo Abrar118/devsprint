@@ -8,15 +8,10 @@ const Register = () => {
       <div className="form-container">
         <div className="signup-title">
           <h1>Create an account</h1>
-          <button type="button">
-            <img src={google} alt="google-icon" />
-            <span>Sign up with Google</span>
-          </button>
         </div>
 
         <div className="partition">
           <hr />
-          <span>or</span>
           <hr />
         </div>
 
