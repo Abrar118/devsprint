@@ -9,7 +9,18 @@ const Navbar = () => {
 
   return (
     <header>
-      <img src={logo} alt="logo" />
+      <img
+        src={logo}
+        alt="logo"
+        onClick={() => {
+          navigate("/");
+        }}
+        onKeyUp={(event) => {
+          if (event.key === "Enter") {
+            navigate("/");
+          }
+        }}
+      />
       <nav>
         <ul>
           <li>
