@@ -1,0 +1,26 @@
+.hero-section {
+   background-image: url(/designer_1.svg);
+   background-size: cover;
+   width: 100%;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 2em 2em;
+}
+
+.hero-section .hero-title {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   margin: 5% 1em;
+}
+
+.hero-section .hero-title h1 {
+   font-size: 2.5em;
+   font-weight: 700;
+   color: var(--blue-dark);
+}

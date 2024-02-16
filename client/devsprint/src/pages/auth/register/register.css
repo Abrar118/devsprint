@@ -1,8 +1,17 @@
+.register-container {
+   width: 100%;
+   background-color: #f8f9fa;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 2em 0;
+}
+
 .form-container {
    width: 30%;
    height: 80%;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-   margin: 5em auto;
    padding: 1em;
 
    display: flex;
@@ -11,20 +20,23 @@
    justify-content: center;
 }
 
-.form-container header {
+.form-container .signup-title {
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   gap: 1em;
    width: 100%;
+   font-family: Poppins, sans-serif;
 }
 
-.form-container header h1 {
+.form-container .signup-title h1 {
    font-size: 2em;
    font-weight: 600;
+   color: var(--blue-dark);
 }
 
-.form-container header button {
+.form-container .signup-title button {
    width: 70%;
    font-size: 1em;
    font-weight: 600;
@@ -43,20 +55,30 @@
    justify-content: center;
 }
 
-.form-container header button:hover {
-   background-color: #212529;
+.form-container .signup-title button:hover {
+   background-color: var(--blue-dark);
    color: #fff;
 }
 
-.form-container header button svg {
+.form-container .signup-title button:active {
+   transform: scale(0.95);
+}
+
+.form-container .signup-title button svg {
    width: 1.2em;
    height: 1.2em;
    margin-right: 0.5em;
 }
 
-.form-container header button span {
+.form-container .signup-title button span {
    font-size: 1em;
    font-weight: 600;
+}
+
+.form-container .signup-title button img {
+   width: 1.2em;
+   height: 1.2em;
+
 }
 
 .form-container .partition {
@@ -149,7 +171,7 @@ form .actions button {
    font-size: 1em;
    font-weight: 600;
    color: #fff;
-   background-color: #1ab79d;
+   background-color: var(--blue-dark);
    border: none;
    outline: none;
    padding: 0.7em 1em;
@@ -172,7 +194,7 @@ form .actions span {
 form .actions span a {
    font-size: 1em;
    font-weight: 600;
-   color: #1ab79d;
+   color: var(--blue-light);
    text-decoration: none;
 }
 
