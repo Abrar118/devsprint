@@ -1,0 +1,191 @@
+.form-container {
+   width: 30%;
+   height: 80%;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+   margin: 5em auto;
+   padding: 1em;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.form-container header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+}
+
+.form-container header h1 {
+   font-size: 2em;
+   font-weight: 600;
+}
+
+.form-container header button {
+   width: 70%;
+   font-size: 1em;
+   font-weight: 600;
+   color: #000000;
+   background-color: transparent;
+   border: none;
+   outline: none;
+   padding: 0.7em 1em;
+   border-radius: 0.25em;
+   cursor: pointer;
+   transition: all 0.3s ease-in-out;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.form-container header button:hover {
+   background-color: #212529;
+   color: #fff;
+}
+
+.form-container header button svg {
+   width: 1.2em;
+   height: 1.2em;
+   margin-right: 0.5em;
+}
+
+.form-container header button span {
+   font-size: 1em;
+   font-weight: 600;
+}
+
+.form-container .partition {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   margin: 1em 0;
+}
+
+.form-container .partition hr {
+   width: 20%;
+   height: 1px;
+   background-color: #212529;
+   border: none;
+   outline: none;
+   opacity: 0.3;
+}
+
+.form-container .partition span {
+   font-size: 1em;
+   font-weight: 600;
+   margin: 0 0.5em;
+}
+
+.form-container form {
+   box-sizing: border-box;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+form .fields {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+form .fields .field {
+   width: 70%;
+   margin: 0.5em 0;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+form .fields .field label {
+   font-size: 1em;
+   font-weight: 600;
+   margin-bottom: 0.5em;
+}
+
+form .fields .field input {
+   box-sizing: border-box;
+   width: 100%;
+   font-size: 1em;
+   font-weight: 600;
+   padding: 0.5em 1em;
+   border: none;
+   border-radius: 0.25em;
+   outline: none;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+   transition: all 0.3s ease-in-out;
+}
+
+form .fields .field input:focus {
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+form .fields .field input::placeholder {
+   font-size: 1em;
+   font-weight: 600;
+}
+
+form .actions {
+   width: 70%;
+   margin: 1em 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+form .actions button {
+   width: 100%;
+   font-size: 1em;
+   font-weight: 600;
+   color: #fff;
+   background-color: #1ab79d;
+   border: none;
+   outline: none;
+   padding: 0.7em 1em;
+   border-radius: 0.25em;
+   cursor: pointer;
+   transition: all 0.3s ease-in-out;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+form .actions button:hover {
+   background-color: #000000;
+}
+
+form .actions span {
+   font-size: 1em;
+   font-weight: 600;
+   margin: 0.5em 0;
+}
+
+form .actions span a {
+   font-size: 1em;
+   font-weight: 600;
+   color: #1ab79d;
+   text-decoration: none;
+}
+
+form .actions span a:hover {
+   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+   .form-container {
+      width: 80%;
+   }
+
+   .form-container .partition span {
+      font-size: 0.8em;
+   }
+}
