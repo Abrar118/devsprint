@@ -3,19 +3,11 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { Server } from "socket.io";
 import http from "http";
-import {
-  UploadApiOptions,
-  UploadApiResponse,
-  v2 as cloudinary,
-} from "cloudinary";
-import {
-  ChangeStreamDocument,
-  Db,
-  InsertOneResult,
-  MongoClient,
-  WithId,
-} from "mongodb";
+import { UploadApiOptions, v2 as cloudinary } from "cloudinary";
+import { Db, MongoClient } from "mongodb";
 import brcypt from "bcrypt";
+import User from "./models/user.js";
+import Password from "./models/password.js";
 
 dotenv.config();
 const app = express();
@@ -52,4 +44,35 @@ const response = await MongoClient.connect(ATLAS).catch((err) => {
   console.error(err);
 });
 
-let db_instance: Db = response?.db(DATABASE) as Db;
+const db_instance: Db = response?.db(DATABASE) as Db;
+const db = {
+  users: db_instance.collection<User>("users"),
+  passwords: db_instance.collection<Password>("passwords"),
+};
+
+server.listen(process.env.PORT, () => {
+  console.log(`Server listening to port ${process.env.PORT}`);
+  console.log("Socket connected ");
+});
+
+//user routes
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
+app.get("/users", async (req, res) => {
+  const userId = req.query.userId as string;
+  let find = {};
+  if (userId) {
+    find = { userId: userId };
+  }
+
+  const users = await db.users.find(find).toArray();
+  res.status(200).json(users);
+});
+
+app.post("/users", async (req, res) => {
+  const user = req.body;
+  const result = await db.users.insertOne(user);
+  res.status(201).json(result);
+});

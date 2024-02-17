@@ -1,17 +1,25 @@
 import React from "react";
-import google from "/google.svg";
 import "./login.css";
+import { Link } from "react-router-dom";
+import loginImage from "/feats.svg";
+
+import { FaDotCircle } from "react-icons/fa";
 
 const Login = () => {
   return (
-    <section className="register-container">
-      <div className="form-container">
+    <section className="login-container">
+      <div className="login-image">
+        <img src={loginImage} alt="login" />
+      </div>
+
+      <div className="loginform-container">
         <div className="signup-title">
           <h1>Log in to your account</h1>
         </div>
 
         <div className="partition">
           <hr />
+          <FaDotCircle className="dot-icon" />
           <hr />
         </div>
 
@@ -40,7 +48,7 @@ const Login = () => {
           <div className="actions">
             <button type="submit">Sign up</button>
             <span>
-              Don't have an account yet? <a href="/register">Sign Up</a>
+              Don't have an account yet? <Link to="/register">Sign Up</Link>
             </span>
           </div>
         </form>
