@@ -1,6 +1,9 @@
 .hero-section {
    background-image: url(/designer_1.svg);
-   background-size: cover;
+   background-size: 80%;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: local;
    width: 100%;
 
    display: flex;
@@ -16,11 +19,57 @@
    align-items: center;
    justify-content: center;
    text-align: center;
-   margin: 5% 1em;
+   margin: 5% 0em 2em 0;
 }
 
 .hero-section .hero-title h1 {
-   font-size: 2.5em;
+   font-size: 3em;
    font-weight: 700;
    color: var(--blue-dark);
+   font-family: Poppins, sans-serif;
+}
+
+.hero-section .hero-title p {
+   font-size: 1.5em;
+   font-weight: 400;
+   color: var(--blue-dark);
+   margin: 1em 0;
+}
+
+.hero-section .hero-buttons {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   gap: 2em;
+   margin-bottom: 48%;
+}
+
+.hero-buttons .hero-button {
+   padding: 0.5em 2em;
+   font-size: 1em;
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+.hero-buttons .get-started {
+   background-color: var(--blue-dark);
+}
+
+.hero-buttons .get-started:hover {
+   background-color: var(--blue-light);
+}
+
+.hero-buttons .learn-more {
+   background-color: transparent;
+   color: var(--blue-dark);
+   border: 1px solid var(--blue-dark);
+}
+
+.hero-buttons .learn-more:hover {
+   background-color: var(--blue-dark);
+   color: #fff;
 }
