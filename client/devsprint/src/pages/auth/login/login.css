@@ -1,186 +1,198 @@
 .login-container {
-    width: 100%;
-    background-color: #f8f9fa;
- 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2em 0;
- }
- 
- .loginform-container {
-    width: 30%;
-    height: 80%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding: 1em;
- 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
- }
- 
- .loginform-container .signup-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-    width: 100%;
-    font-family: Poppins, sans-serif;
- }
- 
- .loginform-container .signup-title h1 {
-    font-size: 2em;
-    font-weight: 600;
-    color: var(--blue-dark);
- }
- 
- .loginform-container .signup-title button {
-    width: 70%;
-    font-size: 1em;
-    font-weight: 600;
-    color: #000000;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 0.7em 1em;
-    border-radius: 0.25em;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
- 
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
- .loginform-container .partition {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 1em 0;
- }
- 
- .loginform-container .partition hr {
-    width: 20%;
-    height: 1px;
-    background-color: #212529;
-    border: none;
-    outline: none;
-    opacity: 0.3;
- }
- 
- .loginform-container .partition span {
-    font-size: 1em;
-    font-weight: 600;
-    margin: 0 0.5em;
- }
- 
- .loginform-container form {
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
- }
- 
- loginform .fields {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
- }
- 
- loginform .fields .field {
-    width: 70%;
-    margin: 0.5em 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
- }
- 
- loginform .fields .field label {
-    font-size: 1em;
-    font-weight: 600;
-    margin-bottom: 0.5em;
- }
- 
- loginform .fields .field input {
-    box-sizing: border-box;
-    width: 100%;
-    font-size: 1em;
-    font-weight: 600;
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 0.25em;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease-in-out;
- }
- 
- loginform .fields .field input:focus {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
- }
- 
- loginform .fields .field input::placeholder {
-    font-size: 1em;
-    font-weight: 600;
- }
- 
- loginform .actions {
-    width: 70%;
-    margin: 1em 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
- }
- 
- loginform .actions button {
-    width: 100%;
-    font-size: 1em;
-    font-weight: 600;
-    color: #fff;
-    background-color: var(--blue-dark);
-    border: none;
-    outline: none;
-    padding: 0.7em 1em;
-    border-radius: 0.25em;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
- }
- 
- loginform .actions button:hover {
-    background-color: #000000;
- }
- 
- loginform .actions span {
-    font-size: 1em;
-    font-weight: 600;
-    margin: 0.5em 0;
- }
- 
- loginform .actions span a {
-    font-size: 1em;
-    font-weight: 600;
-    color: var(--blue-light);
-    text-decoration: none;
- }
- 
- loginform .actions span a:hover {
-    text-decoration: underline;
- }
- 
- @media (max-width: 768px) {
-    .form-container {
-       width: 80%;
-    }
- 
-    .form-container .partition span {
-       font-size: 0.8em;
-    }
- }
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 5%;
+   padding: 2em 0;
+}
+
+@media screen and (max-width: 1000px) {
+   .register-container {
+      flex-direction: column;
+   }
+}
+
+.loginform-container {
+   width: 30%;
+   height: 80%;
+   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+   padding: 1em;
+   margin: 9% 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.loginform-container .signup-title {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 1em;
+   width: 100%;
+   font-family: Poppins, sans-serif;
+}
+
+.loginform-container .signup-title h1 {
+   font-size: 2em;
+   font-weight: 600;
+   color: var(--blue-dark);
+}
+
+.loginform-container .signup-title button {
+   width: 70%;
+   font-size: 1em;
+   font-weight: 600;
+   color: #000000;
+   background-color: transparent;
+   border: none;
+   outline: none;
+   padding: 0.7em 1em;
+   border-radius: 0.25em;
+   cursor: pointer;
+   transition: all 0.3s ease-in-out;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.loginform-container .partition {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 2em;
+   width: 100%;
+   margin: 1em 0;
+
+   .dot-icon {
+      font-size: 0.5em;
+      color: #212529;
+   }
+}
+
+.loginform-container .partition hr {
+   width: 20%;
+   height: 1px;
+   background-color: #212529;
+   border: none;
+   outline: none;
+   opacity: 0.3;
+}
+
+.loginform-container .partition span {
+   font-size: 1em;
+   font-weight: 600;
+   margin: 0 0.5em;
+}
+
+.loginform-container form {
+   box-sizing: border-box;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.loginform-container .fields {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.loginform-container .fields .field {
+   width: 70%;
+   margin: 0.5em 0;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+.loginform-container .fields .field label {
+   font-size: 1em;
+   font-weight: 600;
+   margin-bottom: 0.5em;
+}
+
+.loginform-container .fields .field input {
+   box-sizing: border-box;
+   width: 100%;
+   font-size: 1em;
+   font-weight: 600;
+   padding: 1em 1em;
+   border: none;
+   border-radius: 0.25em;
+   outline: none;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+   transition: all 0.3s ease-in-out;
+}
+
+.loginform-container .fields .field input:focus {
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.loginform-container .fields .field input::placeholder {
+   font-size: 1em;
+   font-weight: 600;
+}
+
+.loginform-container .actions {
+   width: 70%;
+   margin: 1em 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.loginform-container .actions button {
+   width: 100%;
+   font-size: 1em;
+   font-weight: 600;
+   color: #fff;
+   background-color: var(--blue-dark);
+   border: none;
+   outline: none;
+   padding: 0.7em 1em;
+   border-radius: 0.25em;
+   cursor: pointer;
+   transition: all 0.3s ease-in-out;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.loginform-container .actions button:hover {
+   background-color: #000000;
+}
+
+.loginform-container .actions span {
+   font-size: 1em;
+   font-weight: 600;
+   margin: 0.5em 0;
+}
+
+.loginform-container .actions span a {
+   font-size: 1em;
+   font-weight: 600;
+   color: var(--blue-light);
+   text-decoration: none;
+}
+
+.loginform-container .actions span a:hover {
+   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+   .form-container {
+      width: 80%;
+   }
+
+   .form-container .partition span {
+      font-size: 0.8em;
+   }
+}

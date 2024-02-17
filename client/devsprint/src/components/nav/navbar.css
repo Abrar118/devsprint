@@ -4,11 +4,14 @@ header {
    align-items: center;
    padding: 2rem;
    width: 100%;
+   font-family: Poppins, sans-serif;
 }
 
 header img {
    margin-left: 5%;
    cursor: pointer;
+   width: 300px;
+
 }
 
 header nav {

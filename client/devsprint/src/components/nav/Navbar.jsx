@@ -24,22 +24,22 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <Link href="/">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link href="/">About</Link>
+            <Link to="/">About</Link>
           </li>
           <li>
-            <Link href="/">Services</Link>
+            <Link to="/">Services</Link>
           </li>
           <li>
-            <Link href="/">Contact</Link>
+            <Link to="/">Contact</Link>
           </li>
         </ul>
         <button
           type="button"
           onClick={() => {
-            navigate("/register");
+            navigate("/login");
           }}
         >
           SIGN IN

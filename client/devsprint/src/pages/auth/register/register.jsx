@@ -1,6 +1,9 @@
 import React from "react";
-import google from "/google.svg";
 import "./register.css";
+import loginImage from "/feats.svg";
+import { Link } from "react-router-dom";
+
+import { FaDotCircle } from "react-icons/fa";
 
 const Register = () => {
   const handleSubmit = (e) => {
@@ -12,6 +15,9 @@ const Register = () => {
 
   return (
     <section className="register-container">
+      <div className="login-image">
+        <img src={loginImage} alt="login" />
+      </div>
       <div className="form-container">
         <div className="signup-title">
           <h1>Create an account</h1>
@@ -19,6 +25,7 @@ const Register = () => {
 
         <div className="partition">
           <hr />
+          <FaDotCircle className="dot-icon" />
           <hr />
         </div>
 
@@ -69,7 +76,7 @@ const Register = () => {
           <div className="actions">
             <button type="submit">Sign up</button>
             <span>
-              Already have an account? <a href="/login">Log in</a>
+              Already have an account? <Link to="/login">Log in</Link>
             </span>
           </div>
         </form>

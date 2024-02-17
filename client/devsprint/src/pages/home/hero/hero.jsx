@@ -1,8 +1,11 @@
 import React from "react";
 import "./hero.css";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="hero-section">
       <div className="hero-title">
@@ -18,12 +21,15 @@ const Hero = () => {
           whileHover={{ scale: 1.04 }}
           className="get-started hero-button"
           type="button"
+          onClick={() => {
+            navigate("/register");
+          }}
         >
           Get Started
         </motion.button>
         <motion.button
           whileTap={{ scale: 0.9 }}
-          whileHover={{scale: 1.04}}
+          whileHover={{ scale: 1.04 }}
           className="learn-more hero-button"
           type="button"
         >

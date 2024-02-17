@@ -73,3 +73,14 @@
    background-color: var(--blue-dark);
    color: #fff;
 }
+
+@media screen and (max-width: 1000px) {
+   .hero-section {
+      background-size: 100%;
+      background-image: none;
+   }
+
+   .hero-section .hero-buttons {
+      margin-bottom: 5%;
+   }
+}
