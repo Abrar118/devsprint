@@ -1,6 +1,9 @@
 .hero-section {
    background-image: url(/designer_1.svg);
-   background-size: cover;
+   background-size: 80%;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: local;
    width: 100%;
 
    display: flex;
@@ -23,6 +26,7 @@
    font-size: 3em;
    font-weight: 700;
    color: var(--blue-dark);
+   font-family: Poppins, sans-serif;
 }
 
 .hero-section .hero-title p {
@@ -38,6 +42,7 @@
    align-items: center;
    justify-content: center;
    gap: 2em;
+   margin-bottom: 48%;
 }
 
 .hero-buttons .hero-button {
