@@ -16,7 +16,8 @@ const OpenProject = () => {
         name:name,
         category:category,
         subcategory:subcategory,
-        skills:skills
+        skills:skills,
+        members:localStorage.getItem("email")
         }
     const response=await axios.post(`http://localhost:5000/insertproject`,reqbody);
     const data=response.data
