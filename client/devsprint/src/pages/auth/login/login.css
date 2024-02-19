@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-   .register-container {
+   .login-container {
       flex-direction: column;
    }
 }
@@ -23,6 +23,12 @@
    flex-direction: column;
    align-items: center;
    justify-content: center;
+}
+
+@media screen and (max-width: 1000px){
+   .loginform-container {
+      width: 80%;
+   }
 }
 
 .loginform-container .signup-title {
@@ -140,6 +146,50 @@
 .loginform-container .fields .field input::placeholder {
    font-size: 1em;
    font-weight: 600;
+}
+
+.loginform-container .fields .remember-me {
+   width: 70%;
+   margin: 0.5em 0;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.loginform-container .fields .remember-me .checkbox {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.5em;
+}
+
+.loginform-container .fields .remember-me label {
+   font-size: 1em;
+   font-weight: 500;
+}
+
+.loginform-container .fields .remember-me input {
+   width: 1em;
+   height: 1em;
+   cursor: pointer;
+}
+
+.loginform-container .fields .remember-me span {
+   font-size: 1em;
+   font-weight: 600;
+   color: var(--blue-light);
+   cursor: pointer;
+}
+
+.loginform-container .fields .remember-me span:hover {
+   text-decoration: underline;
+}
+
+.loginform-container .fields .remember-me a {
+   font-size: 1em;
+   font-weight: 600;
+   color: var(--blue-light);
+   text-decoration: none;
 }
 
 .loginform-container .actions {

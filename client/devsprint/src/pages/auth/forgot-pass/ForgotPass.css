@@ -1,4 +1,4 @@
-.register-container {
+.forgot-container {
    width: 100%;
    display: flex;
    align-items: center;
@@ -8,46 +8,47 @@
 }
 
 @media screen and (max-width: 1000px) {
-   .register-container {
+   .forgot-container {
       flex-direction: column;
    }
 }
 
-.form-container {
+.forgotform-container {
    width: 30%;
    height: 80%;
    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
    padding: 1em;
-   margin: 6% 0;
+   margin: 9% 0;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   gap: 2em;
 }
 
 @media screen and (max-width: 1000px) {
-   .form-container {
+   .forgotform-container {
       width: 80%;
    }
 }
 
-.form-container .signup-title {
+.forgotform-container .signup-title {
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: flex-start;
    justify-content: center;
    gap: 1em;
    width: 100%;
    font-family: Poppins, sans-serif;
 }
 
-.form-container .signup-title h1 {
+.forgotform-container .signup-title h1 {
    font-size: 2em;
    font-weight: 600;
    color: var(--blue-dark);
 }
 
-.form-container .signup-title button {
+.forgotform-container .signup-title button {
    width: 70%;
    font-size: 1em;
    font-weight: 600;
@@ -66,68 +67,38 @@
    justify-content: center;
 }
 
-.form-container .partition {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   gap: 2em;
-   width: 100%;
-   margin: 1em 0;
-
-   .dot-icon {
-      font-size: 0.5em;
-      color: #212529;
-   }
-}
-
-.form-container .partition hr {
-   width: 20%;
-   height: 1px;
-   background-color: #212529;
-   border: none;
-   outline: none;
-   opacity: 0.3;
-}
-
-.form-container .partition span {
-   font-size: 1em;
-   font-weight: 600;
-   margin: 0 0.5em;
-}
-
-.form-container form {
+.forgotform-container form {
    box-sizing: border-box;
    width: 100%;
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: flex-start;
    justify-content: center;
 }
 
-.form-container form .fields {
+.forgotform-container .fields {
    width: 100%;
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: flex-start;
    justify-content: center;
 }
 
-.form-container form .fields .field {
-   width: 70%;
+.forgotform-container .fields .field {
+   width: 100%;
    margin: 0.5em 0;
    display: flex;
    flex-direction: column;
    align-items: flex-start;
-   position: relative;
 }
 
-.form-container form .fields .field label {
+.forgotform-container .fields .field label {
    font-size: 1em;
    font-weight: 600;
    margin-bottom: 0.5em;
 }
 
-.form-container form .fields .field input {
+.forgotform-container .fields .field input {
    box-sizing: border-box;
    width: 100%;
    font-size: 1em;
@@ -140,27 +111,17 @@
    transition: all 0.3s ease-in-out;
 }
 
-.form-container form .fields .field input:focus {
+.forgotform-container .fields .field input:focus {
    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.form-container form .fields .field input::placeholder {
+.forgotform-container .fields .field input::placeholder {
    font-size: 1em;
    font-weight: 600;
 }
 
-.form-container form .fields .field .password-icon {
-   position: absolute;
-   right: 2%;
-   top: 55%;
-   font-size: 1em;
-   color: #212529;
-   cursor: pointer;
-
-}
-
-.form-container form .actions {
-   width: 70%;
+.forgotform-container .actions {
+   width: 100%;
    margin: 1em 0;
    display: flex;
    flex-direction: column;
@@ -168,7 +129,7 @@
    justify-content: center;
 }
 
-.form-container form .actions button {
+.forgotform-container .actions button {
    width: 100%;
    font-size: 1em;
    font-weight: 600;
@@ -183,24 +144,24 @@
    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.form-container form .actions button:hover {
+.forgotform-container .actions button:hover {
    background-color: #000000;
 }
 
-.form-container form .actions span {
+.forgotform-container .actions span {
    font-size: 1em;
    font-weight: 600;
    margin: 0.5em 0;
 }
 
-.form-container form .actions span a {
+.forgotform-container .actions span a {
    font-size: 1em;
    font-weight: 600;
    color: var(--blue-light);
    text-decoration: none;
 }
 
-.form-container form .actions span a:hover {
+.forgotform-container .actions span a:hover {
    text-decoration: underline;
 }
 

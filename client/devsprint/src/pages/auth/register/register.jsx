@@ -1,16 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import "./register.css";
 import loginImage from "/feats.svg";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import { FaDotCircle } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast } from "react-toastify";
+import { getTextFormattedTime } from "../../../utility/getTimes";
 
 const Register = () => {
-  const handleSubmit = (e) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [username, setUsername] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (password !== confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
+
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
-    console.log(data);
+    data.confirmPassword = undefined;
+    data.phone= "+880-"
+    data.avatar = import.meta.env.VITE_USER_IMAGE;
+    data.publicId = import.meta.env.VITE_AVATAR_PUBLIC_ID;
+    data.createdAt = new Date().toISOString();
+
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_CURRENT_PATH}/users`,
+        data
+      );
+
+      if (response.status === 201) {
+        toast.success("User created successfully");
+        e.target.reset();
+      }
+
+      return;
+    } catch (error) {
+      console.error(error);
+      if (error.response.status === 400) {
+        toast.error("User already exists");
+      } else if (error.response.status === 500) {
+        toast.error("Internal server error");
+      }
+      return;
+    }
   };
 
   return (
@@ -39,6 +81,7 @@ const Register = () => {
                 name="name"
                 id="name"
                 placeholder="Enter your name"
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div className="field">
@@ -49,26 +92,36 @@ const Register = () => {
                 name="email"
                 id="email"
                 placeholder="Enter your email"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="field">
               <label htmlFor="password">Password</label>
               <input
                 required
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
                 placeholder="Enter your password"
+                onChange={(e) => setPassword(e.target.value)}
               />
+              <div className="password-icon">
+                {showPassword ? (
+                  <FaEyeSlash onClick={() => setShowPassword(!showPassword)} />
+                ) : (
+                  <FaEye onClick={() => setShowPassword(!showPassword)} />
+                )}
+              </div>
             </div>
             <div className="field">
-              <label htmlFor="confirm-password">Confirm Password</label>
+              <label htmlFor="confirmPassword">Confirm Password</label>
               <input
                 required
-                type="password"
-                name="confirm-password"
+                type={showPassword ? "text" : "password"}
+                name="confirmPassword"
                 id="confirm-password"
                 placeholder="Confirm your password"
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
           </div>

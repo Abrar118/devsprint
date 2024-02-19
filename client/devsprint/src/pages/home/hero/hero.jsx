@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import "./hero.css";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useLayoutEffect(() => {
+    const token =
+      localStorage.getItem("token") || sessionStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
 
   return (
     <div className="hero-section">
@@ -25,7 +34,7 @@ const Hero = () => {
             navigate("/register");
           }}
         >
-          Get Started
+          {isAuthenticated ? "Dashboard" : "Get Started"}
         </motion.button>
         <motion.button
           whileTap={{ scale: 0.9 }}

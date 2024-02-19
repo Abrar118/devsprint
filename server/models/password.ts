@@ -1,7 +1,7 @@
 interface Password {
-  userId: number;
+  userId: string;
   password: string;
-  previousPasswords: string[];
+  previousPassword: string;
 }
 
 export default Password;

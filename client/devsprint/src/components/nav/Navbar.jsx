@@ -1,11 +1,76 @@
-import React from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import "./navbar.css";
 import logo from "/Landie.png";
 import menu from "/menu.svg";
 import { useNavigate, Link } from "react-router-dom";
 
+const menuItems = [
+  {
+    name: "Home",
+    link: "/",
+  },
+  {
+    name: "About",
+    link: "/",
+  },
+  {
+    name: "Services",
+    link: "/",
+  },
+  {
+    name: "Contact",
+    link: "/",
+  },
+];
+
 const Navbar = () => {
   const navigate = useNavigate();
+  const [login, setLogin] = useState(false);
+  const [avatar, setAvatar] = useState("");
+  const [dropdown, setDropdown] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const menuRef = useRef(null);
+
+  const handleDropdown = () => {
+    setDropdown(!dropdown);
+  };
+
+  const handleMobileMenu = () => {
+    setMobileMenu(!mobileMenu);
+  };
+
+  const handleClick = (e) => {
+    if (menuRef.current && !menuRef.current.contains(e.target)) {
+      setDropdown(false);
+      setMobileMenu(false);
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    sessionStorage.removeItem("token");
+    setTimeout(() => {
+      setLogin(false);
+      navigate("/");
+      window.location.reload(true);
+    }, 1000);
+  };
+
+  useLayoutEffect(() => {
+    const token = JSON.parse(
+      localStorage.getItem("token") || sessionStorage.getItem("token")
+    );
+    if (token) {
+      setLogin(true);
+      setAvatar(token.avatar);
+    }
+
+    document.addEventListener("mousedown", handleClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, [handleClick]);
 
   return (
     <header>
@@ -23,30 +88,76 @@ const Navbar = () => {
       />
       <nav>
         <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/">About</Link>
-          </li>
-          <li>
-            <Link to="/">Services</Link>
-          </li>
-          <li>
-            <Link to="/">Contact</Link>
-          </li>
+          {menuItems.map((item, index) => {
+            return (
+              <li key={item.name}>
+                <Link to={item.link}>{item.name}</Link>
+              </li>
+            );
+          })}
+
+          {login ? (
+            <div
+              className="user"
+              onClick={handleDropdown}
+              onKeyUp={handleDropdown}
+            >
+              <img src={avatar} alt="avatar" />
+
+              {dropdown && (
+                <div className="dropdown" ref={menuRef}>
+                  <Link to="/" onClick={handleDropdown}>
+                    Dashboard
+                  </Link>
+                  <Link to="/" onClick={handleDropdown}>
+                    Profile
+                  </Link>
+                  <Link to="/" onClick={handleDropdown}>
+                    Settings
+                  </Link>
+                  <Link to="/" onClick={handleLogout}>
+                    Logout
+                  </Link>
+                </div>
+              )}
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              SIGN IN
+            </button>
+          )}
         </ul>
-        <button
-          type="button"
-          onClick={() => {
-            navigate("/login");
-          }}
-        >
-          SIGN IN
-        </button>
       </nav>
-      <div>
-        <img src={menu} alt="menu" />
+      <div className="mobile-menu">
+        <img
+          src={menu}
+          alt="menu"
+          onClick={handleMobileMenu}
+          onKeyUp={handleMobileMenu}
+        />
+
+        {mobileMenu && (
+          <div className="mobile-dropdown" ref={menuRef}>
+            <img src={avatar} alt="avatar" />
+            <Link to="/" onClick={handleMobileMenu}>
+              Dashboard
+            </Link>
+            <Link to="/" onClick={handleMobileMenu}>
+              Profile
+            </Link>
+            <Link to="/" onClick={handleMobileMenu}>
+              Settings
+            </Link>
+            <Link to="/" onClick={handleMobileMenu}>
+              Logout
+            </Link>
+          </div>
+        )}
       </div>
     </header>
   );

@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "dev",
+      "path": "server",
+      "problemMatcher": [],
+      "label": "npm: dev - server",
+      "detail": "nodemon server.ts",
+      "group": "build"
+    },
+    {
+      "type": "typescript",
+      "tsconfig": "server/tsconfig.json",
+      "problemMatcher": ["$tsc"],
+      "group": "build",
+      "label": "tsc: build - server/tsconfig.json"
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "path": "server",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "label": "npm: build - server",
+      "detail": "npx tsc"
+    }
+  ]
+}

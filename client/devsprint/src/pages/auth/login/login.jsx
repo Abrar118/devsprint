@@ -1,11 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginImage from "/feats.svg";
 
 import { FaDotCircle } from "react-icons/fa";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const [remember, setRemember] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_CURRENT_PATH}/users/login`,
+        data
+      );
+
+      if (response.status === 200) {
+        console.log(response.data);
+        if (remember) {
+          localStorage.setItem("token", JSON.stringify(response.data));
+        } else {
+          sessionStorage.setItem("token", JSON.stringify(response.data));
+        }
+
+        toast.success("Logged in successfully");
+        setTimeout(() => {
+          navigate("/");
+          window.location.reload(true);
+        }, 1000);
+      }
+    } catch (error) {
+      console.error(error);
+      if (error.response.status === 401) {
+        console.log("Invalid credentials");
+      } else if (error.response.status === 500) {
+        console.log("Internal server error");
+      } else if (error.response.status === 404) {
+        console.log("User not found");
+      }
+    }
+  };
+
   return (
     <section className="login-container">
       <div className="login-image">
@@ -23,7 +66,7 @@ const Login = () => {
           <hr />
         </div>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="fields">
             <div className="field">
               <label for="email">Email</label>
@@ -42,6 +85,24 @@ const Login = () => {
                 id="password"
                 placeholder="Enter your password"
               />
+            </div>
+
+            <div className="remember-me">
+              <div className="checkbox">
+                <input
+                  type="checkbox"
+                  id="remember"
+                  name="remember"
+                  onChange={() => {
+                    setRemember(!remember);
+                  }}
+                />
+                <label for="remember">Remember me</label>
+              </div>
+
+              <span>
+                <Link to="/forgot-password">Forgot password?</Link>
+              </span>
             </div>
           </div>
 
