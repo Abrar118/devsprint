@@ -81,3 +81,28 @@ export const compareDates = (date1: Date, date2: Date) => {
 	if (date1 > date2) return 1;
 	return 0;
 };
+
+export const get6DigitRandomNumber = (n: number) => {
+	const add = 1;
+	let max = 12 - add;
+
+	if (n > max) {
+		return get6DigitRandomNumber(max) + get6DigitRandomNumber(n - max);
+	}
+
+	max = 10 ** (n + add);
+	const min = max / 10;
+	const number = Math.floor(Math.random() * (max - min + 1)) + min;
+
+	return `${number}`.substring(add);
+};
+
+export const generateOTP = (limit: number) => {
+	const digits =
+		"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+";
+	let OTP = "";
+	for (let i = 0; i < limit; i++) {
+		OTP += digits[Math.floor(Math.random() * 10)];
+	}
+	return OTP;
+};
