@@ -174,5 +174,14 @@ app.post('/insertproject', async (req,res) => {
   let data
   data= await db.projects.insertOne(value)
   .catch(()=> res.status(500).json("Could not insert data"))
-  res.json(data)
+  if(data)
+  res.status(200).json(data)
+})
+
+app.get('/myprojectshow/:email', async (req,res) => {
+  const email=req.params.email
+  const data= await db.projects.find({members:email}).toArray()
+  .catch(()=> res.status(500).json("Could not show data"));
+  if(data)
+  res.status(200).json(data)
 })
