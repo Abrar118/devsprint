@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid } from '@mui/material';
-import CourseCard from './CourseCard'; // Import the CourseCard component
+import CourseCard from './CourseCard'; 
+import assets from '../../assets';
 
 const courses = [
   {
@@ -9,7 +10,7 @@ const courses = [
     category: "Computer Science",
     subcategory: "Python",
     description: "A comprehensive introduction to the field of computer science.",
-    image: "https://via.placeholder.com/150",
+    image: assets.python,
     rating: 4.5,
     price: "$99.99"
   },
@@ -19,7 +20,7 @@ const courses = [
     category: "Mechanical Engineering",
     subcategory: "SolidWorks",
     description: "Get started with the fundamentals of mechanical engineering.",
-    image: "https://via.placeholder.com/150",
+    image: assets.solidworks,
     rating: 4.0,
     price: "$79.99"
   },
@@ -29,7 +30,7 @@ const courses = [
     category: "Computer Science",
     subcategory: "JavaScript",
     description: "Learn the basics of JavaScript and how to build web applications.",
-    image: "https://via.placeholder.com/150",
+    image: assets.javascript,
     rating: 4.7,
     price: "$109.99"
   },
@@ -39,19 +40,9 @@ const courses = [
     category: "Civil Engineering",
     subcategory: "AutoCad",
     description: "Learn the basic principles and practices of civil engineering.",
-    image: "https://via.placeholder.com/150",
+    image: assets.autocad,
     rating: 4.2,
     price: "$89.99"
-  },
-  {
-    id: 5,
-    title: "Introduction to SolidWorks",
-    category: "Mechanical Engineering",
-    subcategory: "SolidWorks",
-    description: "Get started with the fundamentals of mechanical engineering.",
-    image: "https://via.placeholder.com/150",
-    rating: 4.0,
-    price: "$79.99"
   },
   {
     id: 6,
@@ -59,7 +50,7 @@ const courses = [
     category: "Computer Science",
     subcategory: "JavaScript",
     description: "Learn the basics of JavaScript and how to build web applications.",
-    image: "https://via.placeholder.com/150",
+    image: assets.javascript,
     rating: 4.7,
     price: "$109.99"
   },
@@ -69,7 +60,7 @@ const courses = [
     category: "Electrical and Electronics Engineering",
     subcategory: "Arduino",
     description: "Learn the basics of Arduino and how to build electrical circuits.",
-    image: "https://via.placeholder.com/150",
+    image: assets.arduino,
     rating: 4.3,
     price: "$99.99"
   },
@@ -79,7 +70,7 @@ const courses = [
     category: "Electrical and Electronics Engineering",
     subcategory: "Robotics",
     description: "Learn the basic principles and practices of civil engineering.",
-    image: "https://via.placeholder.com/150",
+    image: assets.robotics,
     rating: 4.2,
     price: "$89.99"
   },
@@ -89,7 +80,7 @@ const courses = [
     category: "Computer Science",
     subcategory: "cpp",
     description: "Learn the basic principles and practices of coding.",
-    image: "https://via.placeholder.com/150",
+    image: assets.cpp,
     rating: 4.2,
     price: "$89.99"
   },
@@ -99,7 +90,7 @@ const courses = [
     category: "Computer Science",
     subcategory: "Design",
     description: "Learn the basic principles and practices of web design.",
-    image: "https://via.placeholder.com/150",
+    image: assets.webdesigning,
     rating: 4.7,
     price: "$109.99"
   }

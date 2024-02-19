@@ -6,7 +6,7 @@ const HomePage = () => {
   
   return (
     <div>
-      <h1>Welcome to the HomePage</h1>
+      <h1>Find Your Best Courses</h1>
       <CourseContainer searchQuery={searchQuery} />
     </div>
   );
