@@ -26,10 +26,6 @@ const Codespace = () => {
       new Set([editorRef.current]),
       provider.awareness
     );
-
-    yBinding.observe((event) => {
-      console.log(event);
-    });
   };
 
   return (
