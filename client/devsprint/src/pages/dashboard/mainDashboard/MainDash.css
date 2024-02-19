@@ -1,0 +1,116 @@
+.main-dashboard {
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+   width: 100%;
+   height: 100%;
+   border-radius: 1em;
+   font-family: Poppins, sans-serif;
+}
+
+.main-dashboard .left-portion {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: flex-start;
+   width: 70%;
+   height: 100%;
+   padding: 1em;
+}
+
+.left-portion .welcome-bar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+   height: 10%;
+}
+
+.welcome-bar .welcome-text {
+   font-size: 1.6em;
+   font-weight: 600;
+}
+
+.welcome-bar .search-bar {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0.5em;
+   border-radius: 0.5em;
+   position: relative;
+}
+
+.welcome-bar .search-bar input {
+   width: 100%;
+   height: 100%;
+   padding: 0.5em 2em 0.5em 0.5em;
+   border: 1px solid var(--blue-dark);
+   border-radius: 0.5em;
+}
+
+.welcome-bar .search-bar .search-icon {
+   font-size: 1em;
+   color: var(--blue-dark);
+   position: absolute;
+   right: 7%;
+}
+
+.left-portion .upper-stats {
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   width: 100%;
+   margin-top: 1em;
+}
+
+.upper-stats .project-count {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 1em;
+   border-radius: 0.5em;
+   background-color: #F8F8F8;
+}
+
+.project-count h2 {
+   font-size: 1.2em;
+   font-weight: 500;
+}
+
+.upper-stats .category-stats {
+   display: flex;
+   justify-content: center;
+   padding: 1em;
+   border-radius: 0.5em;
+}
+
+.category-stats .category-stat-card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 0.5em;
+   padding: 1em;
+   border-radius: 0.5em;
+   margin: 0 1em;
+   background-color: hsl(0, 0%, 97%);
+}
+
+.category-stat-card .cat-stat-icon {
+   font-size: 1em;
+   color: var(--blue-dark);
+   background-color:  hsl(0, 0%, 90%);
+   border-radius: 50%;
+   height: 100%;
+   width: 100%;
+   padding: 0.5em;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.category-stat-card h2 {
+   font-size: 1em;
+   font-weight: 500;
+}

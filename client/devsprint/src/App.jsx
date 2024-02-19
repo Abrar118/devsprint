@@ -1,14 +1,17 @@
-import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+
 import Navbar from "./components/nav/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/home/Home";
 import Register from "./pages/auth/register/register";
 import Login from "./pages/auth/login/login";
 import ForgotPass from "./pages/auth/forgot-pass/ForgotPass";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Profile from "./pages/profile/Profile";
+import MainDash from "./pages/dashboard/mainDashboard/MainDash";
 
 function App() {
   return (
@@ -21,6 +24,10 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPass />} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route index path="" element={<MainDash />} />
+          </Route>
+          <Route index path="profile" element={<Profile />} />
         </Routes>
       </main>
 
