@@ -29,7 +29,9 @@ const MainLayout = () => {
         }}
       >
         <Toolbar />
-        <Outlet />
+        
+          <Outlet />
+        
       </Box>
     </Box>
   );
