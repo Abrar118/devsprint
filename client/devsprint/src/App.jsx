@@ -9,6 +9,7 @@ import Home from "./pages/home/Home";
 import Register from "./pages/auth/register/register";
 import Login from "./pages/auth/login/login";
 import ForgotPass from "./pages/auth/forgot-pass/ForgotPass";
+import OpenProject from "./pages/OpenProject/OpenProject";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPass />} />
+          <Route path="/openproject" element={<OpenProject />} />
         </Routes>
       </main>
 
