@@ -57,7 +57,13 @@ const Sidebar = () => {
           <PiProjectorScreenChartFill className="sidebar-icon" />
           <span className="link-desc">Explore Projects</span>
         </motion.li>
-        <motion.li whileTap={{ scale: 1.04 }} className="sidebar-link">
+        <motion.li
+          whileTap={{ scale: 1.04 }}
+          className="sidebar-link"
+          onClick={() => {
+            navigate("/dashboard/codespace");
+          }}
+        >
           <FaCodeCompare className="sidebar-icon" />
           <span className="link-desc">Codespaces</span>
         </motion.li>

@@ -5,6 +5,7 @@ header {
    padding: 2em;
    width: 100%;
    font-family: Poppins, sans-serif;
+   z-index: 99;
 }
 
 header img {

@@ -12,6 +12,7 @@ import ForgotPass from "./pages/auth/forgot-pass/ForgotPass";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Profile from "./pages/profile/Profile";
 import MainDash from "./pages/dashboard/mainDashboard/MainDash";
+import Codespace from "./pages/dashboard/codespace/Codespace";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPass />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route index path="" element={<MainDash />} />
+            <Route path="codespace" element={<Codespace />} />
           </Route>
           <Route index path="profile" element={<Profile />} />
         </Routes>
