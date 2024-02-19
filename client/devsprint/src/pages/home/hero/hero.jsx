@@ -31,7 +31,7 @@ const Hero = () => {
           className="get-started hero-button"
           type="button"
           onClick={() => {
-            navigate("/register");
+            navigate(isAuthenticated ? "/dashboard" : "/register");
           }}
         >
           {isAuthenticated ? "Dashboard" : "Get Started"}

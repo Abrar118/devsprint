@@ -1,0 +1,31 @@
+.warning-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 0.5em 2em 2em 2em;
+   width: 70%;
+   background-color: #fff;
+   border-radius: 1em;
+   font-family: Poppins, sans-serif;
+   text-align: center;
+   position: relative;
+   transition: all 0.3s ease;
+}
+
+.warning-container .warning-cross {
+   position: absolute;
+   top: 0.8em;
+   right: 0.8em;
+   cursor: pointer;
+}
+
+.warning-container h2 {
+   font-size: 1.5em;
+   margin: 1em 0 1em 0;
+}
+
+.warning-container p {
+   font-size: 1em;
+   margin: 0em 0 1em 0;
+}

@@ -106,10 +106,10 @@ const Navbar = () => {
 
               {dropdown && (
                 <div className="dropdown" ref={menuRef}>
-                  <Link to="/" onClick={handleDropdown}>
+                  <Link to="/dashboard" onClick={handleDropdown}>
                     Dashboard
                   </Link>
-                  <Link to="/" onClick={handleDropdown}>
+                  <Link to="/profile" onClick={handleDropdown}>
                     Profile
                   </Link>
                   <Link to="/" onClick={handleDropdown}>
@@ -144,16 +144,16 @@ const Navbar = () => {
         {mobileMenu && (
           <div className="mobile-dropdown" ref={menuRef}>
             <img src={avatar} alt="avatar" />
-            <Link to="/" onClick={handleMobileMenu}>
+            <Link to="/dashboard" onClick={handleMobileMenu}>
               Dashboard
             </Link>
-            <Link to="/" onClick={handleMobileMenu}>
+            <Link to="/profile" onClick={handleMobileMenu}>
               Profile
             </Link>
             <Link to="/" onClick={handleMobileMenu}>
               Settings
             </Link>
-            <Link to="/" onClick={handleMobileMenu}>
+            <Link to="/" onClick={handleLogout}>
               Logout
             </Link>
           </div>
