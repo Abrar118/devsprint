@@ -1,5 +1,4 @@
-import { Avatar, Drawer, List, Stack, Toolbar } from "@mui/material";
-import assets from "../../assets";
+import { Drawer, List, Stack, Toolbar } from "@mui/material";
 import colorConfigs from "../../configs/colorConfigs";
 import sizeConfigs from "../../configs/sizeConfigs";
 import appRoutes from "../../routes/appRoutes";
@@ -29,6 +28,7 @@ const Sidebar = () => {
             direction="row"
             justifyContent="center"
           >
+            
           </Stack>
         </Toolbar>
         {appRoutes.map((route, index) => (

@@ -1,19 +1,23 @@
-import { Outlet } from "react-router-dom";
-import { Box, Toolbar } from "@mui/material";
-import colorConfigs from "../../configs/colorConfigs";
-import sizeConfigs from "../../configs/sizeConfigs";
-import Sidebar from "../common/Sidebar";
-import Topbar from "../common/Topbar";
+import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import { Box, Toolbar } from '@mui/material';
+import colorConfigs from '../../configs/colorConfigs';
+import sizeConfigs from '../../configs/sizeConfigs';
+import Sidebar from '../common/Sidebar';
+import Topbar from '../common/Topbar';
 
 const MainLayout = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  
+
   return (
-    <Box sx={{ display: "flex" }}>
-      <Topbar />
+    <Box sx={{ display: 'flex' }}>
+      <Topbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <Box
         component="nav"
         sx={{
           width: sizeConfigs.sidebar.width,
-          flexShrink: 0
+          flexShrink: 0,
         }}
       >
         <Sidebar />
@@ -24,14 +28,12 @@ const MainLayout = () => {
           flexGrow: 1,
           p: 3,
           width: `calc(100% - ${sizeConfigs.sidebar.width})`,
-          minHeight: "100vh",
-          backgroundColor: colorConfigs.mainBg
+          minHeight: '100vh',
+          backgroundColor: colorConfigs.mainBg,
         }}
       >
         <Toolbar />
-        
-          <Outlet />
-        
+        <Outlet />
       </Box>
     </Box>
   );

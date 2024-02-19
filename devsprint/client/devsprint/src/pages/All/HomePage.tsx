@@ -1,11 +1,13 @@
-import React from 'react';
-import CourseContainer from './CourseContainer'; // Import the CourseContainer component
+import React, { useState } from 'react';
+import CourseContainer from './CourseContainer'; 
 
 const HomePage = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  
   return (
     <div>
       <h1>Welcome to the HomePage</h1>
-      <CourseContainer /> {/* Render the CourseContainer component */}
+      <CourseContainer searchQuery={searchQuery} />
     </div>
   );
 };

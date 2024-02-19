@@ -1,4 +1,4 @@
-import { RouteType } from "./config";
+
 import HomePage from "../pages/All/HomePage";
 import CppPage from "../pages/Computer Science Engineering/CppPage";
 import ComputerScienceLayout from "../pages/Computer Science Engineering/ComputerScienceLayout";
@@ -7,7 +7,6 @@ import JavaScriptPage from "../pages/Computer Science Engineering/JavaScriptPage
 import MachineLearningPage from "../pages/Computer Science Engineering/MachineLearningPage";
 import PythonPage from "../pages/Computer Science Engineering/PythonPage";
 import DesignPage from "../pages/Computer Science Engineering/DesignPage";
-import MechanicalLayoutLayout from "../pages/Mechanical Engineering/MechanicalLayout";
 import SolidWorksPage from "../pages/Mechanical Engineering/SolidWorksPage";
 import ThermoDynamicsPage from "../pages/Mechanical Engineering/ThermoDynamicsPage";
 import CivilEngineeringLayout from "../pages/Civil Engineering/CivilEngineeringLayout";
@@ -16,165 +15,174 @@ import ElectricalEngineeringLayout from "../pages/Electrical and Electronics Eng
 import ArduinoPage from "../pages/Electrical and Electronics Engineering/ArduinoPage";
 import EmbeddedSystemsPage from "../pages/Electrical and Electronics Engineering/EmbeddedSystemsPage";
 import MatlabPage from "../pages/Electrical and Electronics Engineering/MatlabPage";
-import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
+
+import MechanicalLayout from "../pages/Mechanical Engineering/MechanicalLayout";
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import DvrOutlinedIcon from '@mui/icons-material/DvrOutlined';
+import ElectricalServicesOutlinedIcon from '@mui/icons-material/ElectricalServicesOutlined';
+import ApartmentOutlinedIcon from '@mui/icons-material/ApartmentOutlined';
+import PrecisionManufacturingOutlinedIcon from '@mui/icons-material/PrecisionManufacturingOutlined';
 
 
-const appRoutes: RouteType[] = [
+const appRoutes = [
   {
-    path: "/",
+    path: "/education-resources-hub", 
     element: <HomePage />,
     state: "home",
     sidebarProps: {
-      displayText: "Home",
-      icon: <DashboardOutlinedIcon />
-    }
-  },
-  {
-    index: false,
-    element: <ComputerScienceLayout />,
-    state: "CSE"
-  },
-  {
-    path: "/computer-science-engineering",
-    element: <ComputerScienceLayout />,
-    state: "CSE",
-    sidebarProps: {
-      displayText: "Computer Science Engineering",
-      icon: <DashboardOutlinedIcon />
-    },
-    child: [
-      {
-        path: "/computer-science-engineering/data-science",
-        element: <DataSciencePage />,
-        state: "datascience",
-        sidebarProps: {
-          displayText: "Data Science"
-        },
-      },
-      {
-        path: "/computer-science-engineering/machine-learning",
-        element: <MachineLearningPage />,
-        state: "ml",
-        sidebarProps: {
-          displayText: "Machine Learning"
-        },
-      },
-      {
-        path: "/computer-science-engineering/python",
-        element: <PythonPage />,
-        state: "python",
-        sidebarProps: {
-          displayText: "Python"
-        },
-      },
-      {
-        path: "/computer-science-engineering/javascript",
-        element: <JavaScriptPage />,
-        state: "javascript",
-        sidebarProps: {
-          displayText: "JavaScript"
-        },
-      },
-      {
-        path: "/computer-science-engineering/design",
-        element: <DesignPage />,
-        state: "design",
-        sidebarProps: {
-          displayText: "Design"
-        },
-      },
-      {
-        path: "/computer-science-engineering/cpp",
-        element: <CppPage />,
-        state: "cpp",
-        sidebarProps: {
-          displayText: "C++"
-        },
-      }
-    ]
-  },
-  {
-    path: "/mechanical-engineering",
-    element: <MechanicalLayoutLayout />,
-    state: "mechanical-engineering",
-    sidebarProps: {
-      displayText: "Mechanical Engineering",
-      icon: <DashboardOutlinedIcon />
-    },
-    child: [
-      {
-        path: "/mechanical-engineering/solidworks",
-        element: <SolidWorksPage />,
-        state: "solidworks",
-        sidebarProps: {
-          displayText: "SolidWorks"
-        },
-      },
-      {
-        path: "/mechanical-engineering/thermodynamics",
-        element: <ThermoDynamicsPage />,
-        state: "thermodynamics",
-        sidebarProps: {
-          displayText: "ThermoDynamics"
-        },
-      }
-    ]
-  },
-  {
-    path: "/civil-engineering",
-    element: <CivilEngineeringLayout />,
-    state: "civil-engineering",
-    sidebarProps: {
-      displayText: "Civil Engineering",
-      icon: <DashboardOutlinedIcon />
+      displayText: "Education Resources Hub",
+      icon: <SchoolOutlinedIcon />
     },
     child: [
       
       {
-        path: "/civil-engineering/autocad",
-        element: <AutoCadPage />,
-        state: "autocad",
+        path: "computer-science-engineering", 
+        element: <ComputerScienceLayout />,
+        state: "computer-science-engineering",
         sidebarProps: {
-          displayText: "AutoCad"
+          displayText: "Computer Science Engineering",
+          icon: <DvrOutlinedIcon />
         },
-      }
-   ]
-  },
-  {
-    path: "/electrical-engineering",
-    element: <ElectricalEngineeringLayout />,
-    state: "electrical-engineering",
-    sidebarProps: {
-      displayText: "Electrical Engineering",
-      icon: <DashboardOutlinedIcon />
-    },
-    child: [
+        child: [
+          {
+            path: "data-science",
+            element: <DataSciencePage />,
+            state: "data-science",
+            sidebarProps: {
+              displayText: "Data Science"
+            }
+          },
+          {
+            path: "machine-learning", 
+            element: <MachineLearningPage />,
+            state: "machine-learning",
+            sidebarProps: {
+              displayText: "Machine Learning"
+            }
+          },
+          {
+            path: "python", 
+            element: <PythonPage />,
+            state: "python",
+            sidebarProps: {
+              displayText: "Python"
+            }
+          },
+          {
+            path: "javascript",
+            element: <JavaScriptPage />,
+            state: "javascript",
+            sidebarProps: {
+              displayText: "JavaScript"
+            }
+          },
+          {
+            path: "cpp",
+            element: <CppPage />,
+            state: "cpp",
+            sidebarProps: {
+              displayText: "C++"
+            }
+          },
+          {
+            path: "design", 
+            element: <DesignPage />,
+            state: "design",
+            sidebarProps: {
+              displayText: "Design"
+            }
+          }
+       
+        ]
+      },
+     
       {
-        path: "/electrical-engineering/arduino",
-        element: <ArduinoPage />,
-        state: "arduino",
+        path: "electrical-engineering", // Relative path
+        element: <ElectricalEngineeringLayout />,
+        state: "electrical-engineering",
         sidebarProps: {
-          displayText: "Arduino"
+          displayText: "Electrical Engineering",
+          icon: <ElectricalServicesOutlinedIcon />
         },
+        child: [
+          {
+            path: "arduino", // Relative path
+            element: <ArduinoPage />,
+            state: "arduino",
+            sidebarProps: {
+              displayText: "Arduino"
+            }
+          },
+          {
+            path: "embedded-systems", // Relative path
+            element: <EmbeddedSystemsPage />,
+            state: "embedded-systems",
+            sidebarProps: {
+              displayText: "Embedded Systems"
+            }
+          },
+          {
+            path: "matlab", // Relative path
+            element: <MatlabPage />,
+            state: "matlab",
+            sidebarProps: {
+              displayText: "Matlab"
+            }
+          }
+         
+        ]
       },
       {
-        path: "/electrical-engineering/embedded-systems",
-        element: <EmbeddedSystemsPage />,
-        state: "embedded-systems",
+        path: "mechanical-engineering", 
+        element: <MechanicalLayout />,
+        state: "mechanical-engineering",
         sidebarProps: {
-          displayText: "Embedded Systems"
+          displayText: "Mechanical Engineering",
+          icon: <PrecisionManufacturingOutlinedIcon />
         },
+        child: [
+          {
+            path: "solidworks", 
+            element: <SolidWorksPage />,
+            state: "solidworks",
+            sidebarProps: {
+              displayText: "SolidWorks"
+            }
+          },
+          {
+            path: "thermodynamics", 
+            element: <ThermoDynamicsPage />,
+            state: "thermodynamics",
+            sidebarProps: {
+              displayText: "ThermoDynamics"
+            }
+          }
+          
+        ]
       },
       {
-        path: "/electrical-engineering/matlab",
-        element: <MatlabPage />,
-        state: "matlab",
+        path: "civil-engineering", 
+        element: <CivilEngineeringLayout />,
+        state: "civil-engineering",
         sidebarProps: {
-          displayText: "Matlab"
+          displayText: "Civil Engineering",
+          icon: <ApartmentOutlinedIcon />
         },
+        child: [
+          {
+            path: "autocad", 
+            element: <AutoCadPage />,
+            state: "autocad",
+            sidebarProps: {
+              displayText: "AutoCad"
+            }
+          }
+        ]
       }
     ]
   }
 ];
 
 export default appRoutes;
+
+

@@ -82,20 +82,49 @@ const courses = [
     image: "https://via.placeholder.com/150",
     rating: 4.2,
     price: "$89.99"
-  
+  },
+  {
+    id: 9,
+    title: "Introduction to C++",
+    category: "Computer Science",
+    subcategory: "cpp",
+    description: "Learn the basic principles and practices of coding.",
+    image: "https://via.placeholder.com/150",
+    rating: 4.2,
+    price: "$89.99"
+  },
+  {
+    id: 10,
+    title: "Introduction to HTML and CSS",
+    category: "Computer Science",
+    subcategory: "Design",
+    description: "Learn the basic principles and practices of web design.",
+    image: "https://via.placeholder.com/150",
+    rating: 4.7,
+    price: "$109.99"
   }
 ];
 
-const CourseContainer = () => {
-    return (
-      <Grid container spacing={2}>
-        {courses.map((course) => (
-          <Grid item key={course.id} xs={12} sm={6} md={4} lg={3}>
-            <CourseCard course={course} />
-          </Grid>
-        ))}
-      </Grid>
-    );
-  };
+interface CourseContainerProps {
+  searchQuery: string; 
+}
+
+const CourseContainer: React.FC<CourseContainerProps> = ({ searchQuery }) => {
+  const filteredCourses = courses.filter(course => 
+    course.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  console.log(searchQuery);
+
+  return (
+    <Grid container spacing={2}>
+      {filteredCourses.map((course) => (
+        <Grid item key={course.id} xs={12} sm={6} md={4} lg={3}>
+          <CourseCard course={course} />
+        </Grid>
+      ))}
+    </Grid>
+  );
+};
   
   export default CourseContainer;
