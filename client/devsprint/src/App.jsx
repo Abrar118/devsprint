@@ -13,6 +13,8 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Profile from "./pages/profile/Profile";
 import MainDash from "./pages/dashboard/mainDashboard/MainDash";
 import Codespace from "./pages/dashboard/codespace/Codespace";
+import OpenProject from "./pages/dashboard/openProject/OpenProject";
+import MyProject from "./pages/dashboard/myProjects/MyProject";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />}>
             <Route index path="" element={<MainDash />} />
             <Route path="codespace" element={<Codespace />} />
+            <Route path="openproject" element={<OpenProject />} />
+            <Route path="myproject" element={<MyProject />} />
           </Route>
           <Route index path="profile" element={<Profile />} />
         </Routes>

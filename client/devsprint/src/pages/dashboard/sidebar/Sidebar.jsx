@@ -49,9 +49,25 @@ const Sidebar = () => {
           <MdDashboard className="sidebar-icon" />
           <span className="link-desc">Dashboard</span>
         </motion.li>
-        <motion.li whileTap={{ scale: 1.04 }} className="sidebar-link">
+        <motion.li
+          whileTap={{ scale: 1.04 }}
+          className="sidebar-link"
+          onClick={() => {
+            navigate("/dashboard/myproject");
+          }}
+        >
           <GoProjectSymlink className="sidebar-icon" />
           <span className="link-desc">My Projects</span>
+        </motion.li>
+        <motion.li
+          whileTap={{ scale: 1.04 }}
+          className="sidebar-link"
+          onClick={() => {
+            navigate("/dashboard/openproject");
+          }}
+        >
+          <GoProjectSymlink className="sidebar-icon" />
+          <span className="link-desc">Create Projects</span>
         </motion.li>
         <motion.li whileTap={{ scale: 1.04 }} className="sidebar-link">
           <PiProjectorScreenChartFill className="sidebar-icon" />

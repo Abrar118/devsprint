@@ -8,6 +8,7 @@ import { Db, InsertOneResult, MongoClient, WithId } from "mongodb";
 import bcrypt from "bcrypt";
 import User from "./models/user.js";
 import Password from "./models/password.js";
+import Project from "./models/project.js";
 
 dotenv.config();
 const app = express();
@@ -48,6 +49,7 @@ const db_instance: Db = response?.db(DATABASE) as Db;
 const db = {
   users: db_instance.collection<User>("users"),
   passwords: db_instance.collection<Password>("passwords"),
+  projects: db_instance.collection<Project>("projects"),
 };
 
 server.listen(process.env.PORT, () => {
@@ -165,4 +167,21 @@ app.patch("/users/:email/password", async (req, res) => {
   } else {
     res.status(404).json({ err: "User not found" });
   }
+});
+
+app.post("/insertproject", async (req, res) => {
+  const value = req.body;
+  const data = await db.projects
+    .insertOne(value)
+    .catch(() => res.status(500).json("Could not insert data"));
+  if (data) res.status(200).json(data);
+});
+
+app.get("/myprojectshow/:email", async (req, res) => {
+  const email = req.params.email;
+  const data = await db.projects
+    .find({ members: email })
+    .toArray()
+    .catch(() => res.status(500).json("Could not show data"));
+  if (data) res.status(200).json(data);
 });
