@@ -10,7 +10,7 @@ const MyProject = () => {
 
   async function getProject() {
     const response = await axios.get(
-      `http://localhost:3002/myprojectshow/${email}`
+      `${import.meta.env.VITE_CURRENT_PATH}/myprojectshow/${email}`
     );
     const data = response.data;
     setProject(data);
