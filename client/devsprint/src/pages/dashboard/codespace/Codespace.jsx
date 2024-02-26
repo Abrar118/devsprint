@@ -17,7 +17,7 @@ const Codespace = () => {
 
     const document = new Doc();
     const provider = new WebrtcProvider("code-room", document, {
-      signaling: ["ws://localhost:5173"],
+      signaling: [import.meta.env.VITE_SIGNALING_SERVER],
     });
     const type = document.getText("monaco");
     const yBinding = new MonacoBinding(
